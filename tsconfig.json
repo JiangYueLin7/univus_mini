@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    "target": "ES2020",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictPropertyInitialization": true,
+    "lib": ["ES2020"],
+    "typeRoots": [
+      "./typings"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@vant/weapp/*": ["/miniprogram/miniprogram_npm/@vant/weapp/*"]
+    },
+    "jsx": "react-jsx", // 确保启用 JSX 支持 [6,7](@ref)
+  },
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

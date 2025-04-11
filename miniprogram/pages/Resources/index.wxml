@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- 标题 -->
+  <view class="header">Resources</view>
+  
+  <!-- 搜索框 -->
+  <input 
+    class="search-input" 
+    placeholder="Search for resources" 
+    placeholder-class="placeholder-style"
+  />
+
+  <!-- 资源卡片列表 -->
+  <view class="card-container">
+    <block wx:for="{{cards}}" wx:key="index">
+      <view class="card">
+        <!-- 卡片上半部分 -->
+        <view class="card-top">
+          <!-- <view class="icon {{item.iconType}}"></view> -->
+          <image class="icon" src="{{item.imageUrl}}" mode="aspectFill" />
+
+          <!-- <text class="card-title">{{item.title}}</text> -->
+        </view>
+        
+        <!-- 卡片下半部分 -->
+        <view class="card-bottom">
+          <text class="card-subtitle">{{item.subtitle}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

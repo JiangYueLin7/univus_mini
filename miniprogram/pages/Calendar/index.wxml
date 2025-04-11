@@ -1,0 +1,37 @@
+<!-- <van-calendar 
+  show="{{ true }}" 
+  default-date="2025-04-09"
+  row-height="96rpx"
+  color="#2a5c9a"
+>
+  <view slot="footer">
+    <view class="calendar-footer">
+      AY 2024/2025 - Sem 2 | Week 12 | Instructional
+      <view class="no-events">You have no events on the selected day</view>
+    </view>
+  </view>
+</van-calendar> -->
+<!-- 日期展示区域 -->
+<view class="date-display" bindtap="openCalendar">
+  当前选择：{{selectedDate || '请选择日期'}}
+</view>
+
+<!-- 日历组件 -->
+<van-calendar
+  type="single"
+  show="{{showCalendar}}"
+  min-date="{{minDate}}"
+  max-date="{{maxDate}}"
+  bind:close="closeCalendar"
+  bind:confirm="onConfirm"
+  class="calendar-popup"
+>
+<!-- <view slot="footer">
+    <view class="calendar-footer">
+      AY 2024/2025 - Sem 2 | Week 12 | Instructional
+      <view class="no-events">You have no events on the selected day</view>
+    </view>
+  </view> -->
+</van-calendar>
+
+<calendar selected="{{selectedDate}}" minDate="{{minDate}}" maxDate="{{maxDate}}" bindselect="onDateSelect"></calendar>

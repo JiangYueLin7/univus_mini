@@ -1,0 +1,8 @@
+/* 日历容器样式 */
+.taro-calendar {
+  margin: 20px;
+}
+/* 日历日期样式 */
+.taro-calendar__date {
+  font-size: 14px;
+}

@@ -1,0 +1,47 @@
+<!-- home.wxml -->
+<view class="container">
+  <!-- 标题区 -->
+  <view class="header">
+    <view class="title-group">
+      <text class="main-title">uNivUS</text>
+      <text class="sub-title">NUS120</text>
+    </view>
+    <text class="welcome">Welcome Guest</text>
+  </view>
+
+  <!-- 探索网格 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">Explore</text>
+      <text class="see-more">See More ></text>
+    </view>
+    <view class="explore-grid">
+      <block wx:for="{{exploreItems}}" wx:key="index">
+        <view class="grid-item">
+          <!-- <view class="icon {{item.iconType}}"></view> -->
+          <image class="icon" src="{{item.imageUrl}}" mode="aspectFill" />
+          <text class="item-title">{{item.title}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 新闻列表 -->
+  <view class="news-section">
+    <text class="section-title">News</text>
+    <view class="news-list">
+      <block wx:for="{{newsList}}" wx:key="index">
+        <view class="news-item">
+          <view class="news-image" style="background-image: url('{{item.imageUrl}}');"></view>
+          <view class="news-content">
+            <view class="news-header">
+              <text class="news-title">{{item.title}}</text>
+              <text class="news-date">{{item.date}}</text>
+            </view>
+            <text class="news-excerpt">{{item.excerpt}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

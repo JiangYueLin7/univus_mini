@@ -1,0 +1,22 @@
+{
+  "name": "univus_mini",
+  "version": "1.0.0",
+  "main": "babel.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@eslint-community/eslint-utils": "^4.5.1",
+    "@tarojs/cli": "^4.0.10",
+    "@tarojs/components": "^4.0.10",
+    "@vant/weapp": "^1.10.7",
+    "eslint": "^9.24.0"
+  },
+  "resolutions": {
+    "@eslint-community/eslint-utils": "4.4.0"
+  },
+  "description": ""
+}

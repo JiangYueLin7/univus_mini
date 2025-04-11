@@ -1,0 +1,110 @@
+/* home.less */
+@primary-blue: #2a5c9a;
+@border-color: #e0e0e0;
+
+.container {
+  padding: 32rpx;
+  background: #fff;
+  padding-top: 55rpx;
+}
+
+.header {
+  margin-bottom: 48rpx;
+  .title-group {
+    display: flex;
+    align-items: baseline;
+    .main-title {
+      font-size: 48rpx;
+      color: @primary-blue;
+      font-weight: 700;
+      margin-right: 24rpx;
+    }
+    .sub-title {
+      font-size: 28rpx;
+      color: #666;
+    }
+  }
+  .welcome {
+    font-size: 36rpx;
+    color: #333;
+    margin-top: 16rpx;
+    display: block;
+  }
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32rpx;
+  .grid-item {
+    text-align: center;
+    .icon {
+      width: 96rpx;
+      height: 96rpx;
+      border-radius: 50%;
+      margin: 0 auto 16rpx;
+      &.Admissions { background: #d1e3f6; }
+      &.Prospectus { background: #f0d9e5; }
+      // 其他图标颜色...
+    }
+    .item-title {
+      font-size: 24rpx;
+      color: #444;
+      line-height: 1.4;
+    }
+  }
+}
+
+.news-section {
+  margin-top: 64rpx;
+  .news-list {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08);
+  }
+  .news-item {
+    display: flex;
+    padding: 32rpx;
+    border-bottom: 1rpx solid @border-color;
+    &:last-child {
+      border-bottom: none;
+    }
+    .news-image {
+      width: 200rpx;
+      height: 200rpx;
+      border-radius: 8rpx;
+      background: #ddd;
+      margin-right: 32rpx;
+      background-size: cover;
+    }
+    .news-content {
+      flex: 1;
+      .news-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16rpx;
+      }
+      .news-title {
+        font-size: 30rpx;
+        color: #333;
+        font-weight: 600;
+        line-height: 1.4;
+        flex: 1;
+      }
+      .news-date {
+        font-size: 26rpx;
+        color: @primary-blue;
+        margin-left: 24rpx;
+      }
+      .news-excerpt {
+        font-size: 28rpx;
+        color: #666;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+    }
+  }
+}

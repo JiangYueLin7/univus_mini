@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Resources/index",
+    "pages/Inbox/index",
+    "pages/Calendar/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+ 
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Home",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/Resources/index",
+        "text": "Resources",
+        "iconPath": "images/resources.png",
+        "selectedIconPath": "images/resources-active.png"
+      },
+      {
+        "pagePath": "pages/Inbox/index",
+        "text": "Inbox",
+        "iconPath": "images/inbox.png",
+        "selectedIconPath": "images/inbox-active.png"
+      },
+      {
+        "pagePath": "pages/Calendar/index",
+        "text": "Calendar",
+        "iconPath": "images/calendar.png",
+        "selectedIconPath": "images/calendar-active.png"
+      }
+    ],
+    "usingComponents": {
+      "van-calendar": "@vant/weapp/dict/calendar/index"
+    }
+  }
+}

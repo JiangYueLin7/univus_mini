@@ -1,0 +1,22 @@
+<!-- inbox.wxml -->
+<view class="container">
+  <!-- 顶部滚动标签 -->
+  <scroll-view class="tab-bar" scroll-x>
+    <text class="tab-item active">NUS Alert</text>
+    <text class="tab-item">Emergency</text>
+    <text class="tab-item">Notification</text>
+    <text class="tab-item">Feed</text>
+    <text class="tab-item">Bookmarks</text>
+    <text class="tab-item">Following</text>
+  </scroll-view>
+
+  <!-- 内容卡片 -->
+  <!-- 使用 wx:for 遍历 contentCards 数组 -->
+  <block wx:for="{{contentCards}}" wx:key="index">
+    <view class="content-card">
+      <image class="cover-image" src="{{item.imageUrl}}" mode="aspectFill" />
+      <view class="title">{{item.title}}</view>
+      <view class="content">{{item.content}}</view>
+    </view>
+  </block>
+</view>
