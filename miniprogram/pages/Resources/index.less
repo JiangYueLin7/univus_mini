@@ -6,6 +6,9 @@
   background-color: @background-color;
   min-height: 100vh;
   padding: 20rpx;
+  position: relative;
+  /* 创建定位上下文 */
+  // margin-top: 110rpx;
 }
 
 .header {
@@ -15,18 +18,26 @@
   padding: 30rpx 0;
   padding-top: 50rpx;
   color: @text-color;
+  position: fixed;
 }
 
 .search-input {
   width: 90%;
-  /* 新增宽度设置 */
   height: 80rpx;
   background: white;
   border-radius: 40rpx;
   padding: 0 30rpx;
-  margin: 20rpx 0;
+  margin: 40rpx auto 20rpx;
+  /* 负边距使其上移，覆盖在 Header 下方合适位置 */
+  position: fixed;
+  /* 固定定位 */
+  top: 130rpx;
+  /* 根据 Header 高度调整，确保在 Header 下方 */
+  left: 5%;
+  z-index: 10;
+  /* 确保在其他元素之上 */
   font-size: 28rpx;
-  display: block; /* 确保百分比宽度生效 */
+  display: block;
 
   .placeholder-style {
     color: #999;
@@ -36,15 +47,29 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-top: 230rpx;
+  min-height: 100%;
+  /* 防止内容塌陷 *
+  /position: absolute;
+  top: calc(80rpx + 100rpx); /* 搜索框高度 + 固定间距 */
+  width: 100%;
+  padding: 20rpx 20rpx 0; /* 顶部间距 + 卡片间距 */
 }
 
 .card {
-  width: 48%;
+  width: 45%;
+  /* 两个卡片占一半宽度，减去间距 */
   background: white;
   border-radius: 16rpx;
   margin-bottom: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 5rpx;
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  /* 确保内边距不影响宽度计算 */
+  min-height: 240rpx;
+  /* 保证卡片最小高度 */
 
   &-top {
     padding: 30rpx;
@@ -60,6 +85,11 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+.card-scroll {
+  height: calc(100vh - 180rpx);
+  /* 固定可用高度 */
 }
 
 .icon {
@@ -87,14 +117,14 @@
 .card-title {
   font-size: 28rpx;
   color: @text-color;
-  display: -webkit-box;        // 启用弹性盒模型
+  display: -webkit-box; // 启用弹性盒模型
   -webkit-box-orient: vertical; // 文字垂直排列
-  -webkit-line-clamp: 2;       // 限制显示行数
+  -webkit-line-clamp: 2; // 限制显示行数
   line-height: 1.4;
-  height: 80rpx;              // 总高度=行高*行数（1.4*28*2≈78rpx）
-  overflow: hidden;           // 隐藏溢出内容
-  text-overflow: ellipsis;    // 添加省略号
-  word-break: break-all;      // 允许单词内断行
+  height: 80rpx; // 总高度=行高*行数（1.4*28*2≈78rpx）
+  overflow: hidden; // 隐藏溢出内容
+  text-overflow: ellipsis; // 添加省略号
+  word-break: break-all; // 允许单词内断行
 }
 
 .card-subtitle {
@@ -102,4 +132,13 @@
   font-size: 24rpx;
   text-align: center;
   line-height: 1.2;
+}
+
+/* 处理最后一行可能出现的空白 */
+.card-container::after {
+  content: "";
+  width: 45%;
+  height: 0;
+  display: inline-block;
+
 }

@@ -7,11 +7,13 @@
     class="search-input" 
     placeholder="Search for resources" 
     placeholder-class="placeholder-style"
+    bindinput="onInputChange"
+    value="{{searchText}}"
   />
 
   <!-- 资源卡片列表 -->
   <view class="card-container">
-    <block wx:for="{{cards}}" wx:key="index">
+    <block wx:for="{{filteredCards}}" wx:key="index">
       <view class="card">
         <!-- 卡片上半部分 -->
         <view class="card-top">
